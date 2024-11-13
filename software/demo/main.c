@@ -129,6 +129,7 @@ static void help(void)
 	puts("ant                - Spinning Donut demo Ant");
 	puts("video              - Spinning Donut demo Video");
 	puts("hanoi              - Spinning Donut demo Hanoi");
+	puts("ges_test           - Spinning Donut demo gesture test");
 }
 
 /*-----------------------------------------------------------------------*/
@@ -415,6 +416,13 @@ static void cmatrix_cmd(void)
 	cmatrix();
 }
 
+extern void ges_test(void);
+
+static void ges_test_cmd(void)
+{
+	printf("Ges_test demo...\n");
+	ges_test();
+}
 extern void eggs(void);
 
 static void eggs_cmd(void)
@@ -509,6 +517,8 @@ static void console_service(void)
 		slider_cmd();
 	else if(strcmp(token, "cmatrix") == 0)
 		cmatrix_cmd();
+	else if(strcmp(token, "ges_test") == 0)
+		ges_test_cmd();
 	else if(strcmp(token, "type") == 0)
 		type_cmd();
 	else if(strcmp(token, "ant") == 0)
